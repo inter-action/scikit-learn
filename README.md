@@ -55,8 +55,6 @@ install virtualenv, pip, ipython !
 ## with vscode:
 https://code.visualstudio.com/docs/languages/python
 
-    generate editorconfig file
-
 ## with ipython
 
     ctrl + l  #clear screen
@@ -66,6 +64,7 @@ https://code.visualstudio.com/docs/languages/python
 
 # Python3 language:
 python3 module system - https://docs.python.org/3/tutorial/modules.html
+
     dir()               # print out what available in this module
     import builtins     # see what inside builtins
     
