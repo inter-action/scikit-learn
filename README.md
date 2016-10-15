@@ -56,8 +56,15 @@ install virtualenv, pip, ipython !
 https://code.visualstudio.com/docs/languages/python
 
 ## with ipython
+先activate virtualenv, then `>ipython`
 
     ctrl + l  #clear screen
+    
+    # --- auto reload module:
+    # http://stackoverflow.com/questions/5364050/reloading-submodules-in-ipython
+
+    %load_ext autoreload
+    %autoreload 2
 
     
 
@@ -68,6 +75,15 @@ python3 module system - https://docs.python.org/3/tutorial/modules.html
     dir()               # print out what available in this module
     import builtins     # see what inside builtins
     
+
+Exceptions - https://docs.python.org/3/tutorial/errors.html
+
+
+
+
+# Links
+
+* [sklearn working with text example](http://scikit-learn.sourceforge.net/stable/auto_examples/index.html#working-with-text-documents)
 
 
 
@@ -84,6 +100,8 @@ python3 module system - https://docs.python.org/3/tutorial/modules.html
         ! learning more about ipython
         string format - http://www.python-course.eu/python3_formatted_output.php
         find a better way to handle __pycache__, generate it in non-src folder
+        add python unit test
+
         
 
 

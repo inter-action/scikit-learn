@@ -27,5 +27,5 @@ deps-freeze:
 deps-install:
 	pip install -r requirements.txt
 
-run-main:
+run:
 	python src/main.py
