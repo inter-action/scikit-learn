@@ -21,9 +21,9 @@ install virtualenv, pip, ipython !
 
 ## 
 * install ipython # REPL 很重要！
-* setting up virtual env, & activate it 
+* setting up pyvenv, & activate it, 之所以不用virtualenv是因为和matplotlib有兼容性问题, 而且pyvenv是自带的
 
-        virtualenv .env 
+        pyvenv .env
         source .env/bin/activate  
         deactivate  # deactivate virtualenv
     
@@ -66,11 +66,18 @@ https://code.visualstudio.com/docs/languages/python
     %load_ext autoreload
     %autoreload 2
 
+    # add auto reload permanently
+    ipython profile create
+
+    # appending following content to `~/.ipython/profile_default/ipython_config.py`
+    c.InteractiveShellApp.extensions = ['autoreload']     
+    c.InteractiveShellApp.exec_lines = ['%autoreload 2']
+
     
 
 
 # Python3 language:
-python3 module system - https://docs.python.org/3/tutorial/modules.html
+### python3 module system - https://docs.python.org/3/tutorial/modules.html
 
     dir()               # print out what available in this module
     import builtins     # see what inside builtins
@@ -79,6 +86,29 @@ python3 module system - https://docs.python.org/3/tutorial/modules.html
 Exceptions - https://docs.python.org/3/tutorial/errors.html
 
 
+### import:
+
+    from driver import chrome_driver as mydriver # absolute import
+
+    from ..driver import chrome_driver as mydriver # relative import
+
+        - driver
+            - chrome_driver
+        - crawler
+            - web_crawler.py # 这个file引用chrome_driver
+        main.py # 这种情况下relative import是非法的.
+            http://stackoverflow.com/questions/33837717/systemerror-parent-module-not-loaded-cannot-perform-relative-import
+                Note that relative imports are based on the name of the current module. 
+                Since the name of the main module is always "__main__", modules intended for use as 
+                the main module of a Python application must always use absolute imports.
+
+### string format:
+    https://pyformat.info/
+
+### is vs ==
+http://stackoverflow.com/questions/2988017/string-comparison-in-python-is-vs
+
+> You use == when comparing values and is when comparing identities.
 
 
 # Links

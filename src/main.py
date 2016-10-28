@@ -4,6 +4,7 @@ from nlp import tf_idf
 def main():
     # term_frequency.test_fr()
     tf_idf.run()
+     
 
 if __name__ == '__main__':
     import sys
